@@ -1,0 +1,20 @@
+version: '2'
+services:
+  riot_app:
+    container_name: riot_app
+    image: riot_app
+    # コンテナ作成に利用するファイル群を指定する（この場合、Dockerfileが存在するディレクトリを指定）
+    build:
+      context: ..
+      dockerfile: "Dockerfile"
+    # stdin_open: true = コンテナの標準入力をオープンしたままにする
+    stdin_open: true
+    # tty:true = コンテナに疑似TTYを割り当てる
+    tty: true
+    # ポート指定
+    volumes:
+      - ..:/app
+    ports:
+      - "1234:1234"
+    # コンテナ立ち上げ時に実行するコマンドを指定
+    command: npm run watch

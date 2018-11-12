@@ -1,0 +1,16 @@
+{
+  "name": "riot-parcel-docker",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "watch": "npm run watch:riot & npm run watch:parcel",
+    "watch:riot": "riot -w src/app/ src/app/tags.js",
+    "watch:parcel": "parcel src/index.html"
+  },
+  "author": "omiend",
+  "license": "ISC",
+  "dependencies": {
+    "riot": "^3.13.1"
+  }
+}
